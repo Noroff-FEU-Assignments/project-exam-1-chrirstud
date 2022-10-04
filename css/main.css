@@ -1,0 +1,186 @@
+/*<!--
+
+//GLOBAL STYLES//-->*/
+:root {
+  --dark_blue: #374659;
+  --light_blue: #8aafdf;
+  --white: #eeeeee;
+  --orange: #fca400;
+  --grey: #989ea6;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+
+  /* guide-lines / backgound
+  border: 1px solid red;
+  background-color: rgba(140, 35, 72, 0.11);*/
+}
+
+body {
+  font-family: "Numans", sans-serif;
+  background-color: var(--dark_blue);
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+span {
+  color: var(--white);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 25pt;
+}
+
+h2 {
+  font-size: 18 pt;
+}
+
+h3,
+p,
+a,
+span {
+  font-size: 14pt;
+}
+
+a:hover {
+  color: var(--light_blue);
+}
+
+#link.material-symbols-rounded {
+  font-size: 25px !important;
+  text-indent: 0px;
+}
+
+#link.material-symbols-rounded:hover {
+  color: var(--light_blue);
+}
+
+.material-symbols-rounded {
+  color: var(--white);
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 40;
+}
+
+img#main-logo {
+  max-width: 200px;
+  height: auto;
+}
+
+.header-wrapper,
+.main-wrapper,
+.footer-wrapper {
+  background-color: inherit;
+  width: 100%;
+}
+/*<!--
+
+//HEADER//-->*/
+header {
+  display: flex;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: fit-content;
+  background-color: inherit;
+}
+
+.header-wrapper {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*<!--
+
+//MAIN//-->*/
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-top: 120px;
+}
+
+.main-wrapper {
+  padding-top: 25px;
+  max-width: 1080px;
+}
+
+#page-intro {
+  padding: 15px;
+}
+
+#page-intro p {
+  padding: 15px;
+}
+
+#latest-posts {
+}
+
+#featured-posts {
+}
+
+/*<!--
+
+//FOOTER//-->*/
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.footer-wrapper {
+  display: block;
+  text-align: center;
+  max-width: 1080px;
+  padding-top: 25px;
+  margin-bottom: 25px;
+  border-top: solid 1px var(--grey);
+}
+
+footer span,
+footer p,
+footer a {
+  font-size: 10pt;
+}
+
+.footer-links,
+.footer-copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+#copyright.material-symbols-rounded {
+  font-size: 10pt !important;
+  margin: 5px;
+}
+
+img#socials-icons {
+  margin: 5px;
+  width: 25px;
+  height: 25px;
+}
