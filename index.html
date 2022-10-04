@@ -20,15 +20,44 @@
   </head>
   <body>
     <!--
-      
+
       //HEADER//-->
     <header>
       <div class="header-wrapper">
-        <img
-          id="main-logo"
-          src="/img/logos/25percent_cropped/odd-tops_logo_color-25.png"
-          alt="Odd Tops Logo"
-        />
+        <a href="/index.html">
+            <img
+            id="main-logo"
+            class="header-logo"
+            src="/img/logos/25percent_cropped/odd-tops_logo_color-25.png"
+            alt="Odd Tops Logo"
+          />
+        </a><!--
+              
+              //HAMBURGER-MENU//-->
+          <label class="hamburger-label" for="hamburger-menu">
+            <span id="hamburgerIcon" class="material-symbols-rounded">menu</span>
+          </label>
+          <input type="checkbox" id="hamburger-menu" />
+          <!--
+              
+              //MAIN-NAV//-->
+          <nav>
+            <ul>
+              <li><a class="current-page" href="/index.html">home</a></li>
+              <li><a href="/pages/blog-list.html">my tops</a></li>
+              <li><a href="/pages/about.html">about</a></li>
+              <li><a href="/pages/contact.html">contact</a></li>
+            </ul>
+            <label class="hamburger-exit" for="hamburger-menu">
+              <span id="hamburgerIcon" class="material-symbols-rounded">close</span>
+            </label>
+          </nav>
+        </section>
+      </div>
+    </header>
+    <!--
+      
+      //MAIN//-->
       </div>
     </header>
     <!--
@@ -50,12 +79,13 @@
       </div>
     </main>
     <!--
-      
+
       //FOOTER//-->
     <footer>
       <div class="footer-wrapper">
         <img
           id="main-logo"
+          class="footer-logo"
           src="/img/logos/25percent_cropped/odd-tops_logo_color-25.png"
           alt="Odd Tops Logo"
         />
@@ -112,5 +142,6 @@
     <!--
       
       //END//-->
+    <script src="js/onscroll.js"></script>
   </body>
 </html>

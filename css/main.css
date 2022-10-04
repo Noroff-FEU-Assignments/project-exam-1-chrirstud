@@ -83,6 +83,7 @@ a:hover {
 img#main-logo {
   max-width: 200px;
   height: auto;
+  margin: 10px;
 }
 
 .header-wrapper,
@@ -102,14 +103,93 @@ header {
   right: 0;
   height: fit-content;
   background-color: inherit;
+  padding-bottom: 10px;
+  padding-top: 5px;
 }
 
 .header-wrapper {
   display: block;
   width: 100%;
   height: auto;
+  border-bottom: solid 1px var(--grey);
 }
 
+#hamburgerIcon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: xx-large;
+  color: var(--orange);
+}
+
+nav,
+#hamburger-menu {
+  display: none;
+}
+
+#hamburger-menu:checked ~ nav {
+  display: grid;
+  grid-template-columns: auto auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: auto;
+  height: 100%;
+  margin: 0 auto;
+  background-color: var(--dark_blue);
+}
+
+nav ul {
+  list-style-type: none;
+  display: block;
+  padding: 10%;
+  max-width: 250px;
+}
+
+nav ul li {
+  text-align: left;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/*---TRANSISTION BORDER-BOTTOM--->*/
+
+nav ul li a:after,
+nav ul li a:before {
+  content: "";
+  border-bottom: solid 2px var(--orange);
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+nav ul li a:after {
+  display: block;
+  content: "";
+  border-bottom: solid 2px var(--orange);
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+nav ul li a:hover:after {
+  transform: scaleX(1);
+  transform-origin: 0% 50%;
+}
+
+/*---NAV LINK---*/
+
+nav a {
+  height: auto;
+  margin: 0px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--orange);
+}
+
+nav a.current-page {
+  border-bottom: solid 2px var(--orange);
+}
 /*<!--
 
 //MAIN//-->*/
@@ -118,7 +198,7 @@ main {
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding-top: 120px;
+  padding-top: 150px;
 }
 
 .main-wrapper {
