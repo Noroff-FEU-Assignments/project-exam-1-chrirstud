@@ -24,14 +24,17 @@
       //HEADER//-->
     <header>
       <div class="header-wrapper">
-        <a href="/index.html">
-            <img
-            id="main-logo"
-            class="header-logo"
-            src="/img/logos/25percent_cropped/odd-tops_logo_color-25.png"
-            alt="Odd Tops Logo"
-          />
-        </a><!--
+        <div id="logoContainer">
+          <a href="/index.html">
+            <!--REMEMBER TO CHANGE LOGO SRC IN "onscroll.js"-->
+              <img
+              id="main-logo"
+              class="header-logo"
+              src="/img/logos/25percent_cropped/odd-tops_logo_color-25.png"
+              alt="Odd Tops Logo"
+            />
+          </a>
+        </div><!--
               
               //HAMBURGER-MENU//-->
           <label class="hamburger-label" for="hamburger-menu">
@@ -55,7 +58,7 @@
             </div>
             <ul>
               <li><a class="current-page" href="/index.html"><div class="nav-button">home</div></a></li>
-              <li><a href="/pages/blog-list.html"><div class="nav-button">my tops</div></a></li>
+              <li><a href="/pages/blog-list.html"><div class="nav-button">blog</div></a></li>
               <li><a href="/pages/about.html"><div class="nav-button">about</div></a></li>
               <li><a href="/pages/contact.html"><div class="nav-button">contact</div></a></li>
             </ul>
