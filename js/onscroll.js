@@ -9,10 +9,7 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
-  if (
-    document.body.scrollTop > 305 ||
-    document.documentElement.scrollTop > 305
-  ) {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     logoContainer.style.background = "none";
     logoContainer.style.minHeight = "fit-content";
     logo.src = "/img/logos/icon_only/odd-tops_logo_color_icon-only.png";
