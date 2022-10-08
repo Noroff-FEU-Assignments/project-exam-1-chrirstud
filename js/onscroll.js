@@ -1,4 +1,4 @@
-//This script is transforming the header to a smaller version on scroll
+//Transforming the header to a smaller version on scroll
 
 const header = document.querySelector(".header-wrapper");
 const logo = document.querySelector(".header-logo");
@@ -24,3 +24,18 @@ function scrollFunction() {
     header.style.display = "block";
   }
 }
+
+//Scroll posts on button click
+
+const buttonRight = document.querySelector("button#slideRight");
+const buttonLeft = document.querySelector("button#slideLeft");
+const latestPosts = document.querySelector(".latestPosts");
+const featuredPosts = document.querySelector(".featuredPosts");
+
+buttonRight.onclick = function () {
+  latestPosts.scrollLeft += 300;
+};
+
+buttonLeft.onclick = function () {
+  latestPosts.scrollLeft -= 300;
+};
