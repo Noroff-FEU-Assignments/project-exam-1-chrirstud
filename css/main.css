@@ -3,7 +3,7 @@
 //GLOBAL STYLES//-->*/
 :root {
   /*Color Palette*/
-  --dark_blue: #374659;
+  --dark_blue:/* #374659*/ #222931;
   --light_blue: #8aafdf;
   --white: #eeeeee;
   --orange: #fca400;
@@ -252,8 +252,7 @@ main {
   margin-bottom: 25px;
 }
 
-#latest-posts,
-#featured-posts {
+#latest-posts {
   display: grid;
   grid-template-areas:
     "heading break-line view-more"
@@ -271,15 +270,14 @@ main {
 }
 
 #latest-posts a {
+  height: fit-content;
   grid-area: posts;
   align-self: flex-end;
   justify-self: center;
   margin: -15px;
 }
 
-.latestPosts div,
-.featuredPosts div {
-  border-radius: 25px;
+.latestPosts div {
   text-align: center;
   min-width: 100vw;
   height: calc(100vw * 1);
@@ -288,8 +286,7 @@ main {
   align-self: flex-end;
 }
 
-.latestPosts,
-.featuredPosts {
+.latestPosts {
   grid-area: posts;
   display: flex;
   width: 100%;
@@ -301,9 +298,12 @@ main {
   -ms-overflow-style: none; /*  hide scrollbar - IE 10+ */
 }
 
-.latestPosts::-webkit-scrollbar,
-.featuredPosts::-webkit-scrollbar {
+.latestPosts::-webkit-scrollbar {
   /* WebKit - hide scrollbar - Chrome */
+  display: none;
+}
+
+#featured-posts {
   display: none;
 }
 
@@ -338,6 +338,8 @@ button#slideRight:active {
 .post {
   display: block;
   overflow: hidden;
+  border: solid 5px var(--dark_blue);
+  border-radius: 25px;
 }
 
 .post img {
@@ -543,13 +545,12 @@ Media Query above 500px width -->*/
     margin-bottom: 75px;
   }
 
-  .latestPosts div,
-  .featuredPosts div {
+  .latestPosts div {
+    border-radius: 25px;
     text-align: center;
     min-width: 540px;
     height: 270px;
     scroll-snap-align: start;
-    border: solid 2.5px var(--dark_blue);
   }
 
   .latestPosts,
@@ -566,6 +567,33 @@ Media Query above 500px width -->*/
     justify-self: center;
     margin: 10px;
   }
+
+  #featured-posts {
+    display: grid;
+    grid-template-areas:
+      "heading break-line"
+      "posts posts";
+    grid-template-columns: auto 1fr;
+    margin-bottom: 75px;
+  }
+
+  .featuredPosts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .big-post,
+  .small-post {
+    display: grid;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .small-post {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
   /*<!--
 
 //FOOTER//-->*/
