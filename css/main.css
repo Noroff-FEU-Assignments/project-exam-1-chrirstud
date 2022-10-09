@@ -13,6 +13,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -95,6 +96,23 @@ img#main-logo {
 .footer-wrapper {
   background-color: inherit;
   width: 100%;
+}
+
+#main-button {
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--orange);
+  color: var(--dark_blue);
+  font-size: 15pt;
+  font-weight: bolder;
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: solid 1px var(--orange);
+}
+
+#main-button:hover {
+  background-color: var(--dark_blue);
+  color: var(--orange);
 }
 /*<!--
 
@@ -238,10 +256,10 @@ main {
 #featured-posts {
   display: grid;
   grid-template-areas:
-    "heading break-line"
-    "posts posts";
+    "heading break-line view-more"
+    "posts posts posts";
   grid-template-columns: auto 1fr;
-  margin-bottom: 25px;
+  margin-bottom: 75px;
 }
 
 .break-line {
@@ -250,6 +268,13 @@ main {
   height: 0;
   align-self: center;
   margin-left: 15px;
+}
+
+#latest-posts a {
+  grid-area: posts;
+  align-self: flex-end;
+  justify-self: center;
+  margin: -15px;
 }
 
 .latestPosts div,
@@ -271,6 +296,7 @@ main {
   white-space: nowrap;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   scrollbar-width: none; /* hide scrollbar - Firefox */
   -ms-overflow-style: none; /*  hide scrollbar - IE 10+ */
 }
@@ -278,7 +304,7 @@ main {
 .latestPosts::-webkit-scrollbar,
 .featuredPosts::-webkit-scrollbar {
   /* WebKit - hide scrollbar - Chrome */
-  width: 10px;
+  display: none;
 }
 
 button#slideLeft,
@@ -532,6 +558,13 @@ Media Query above 500px width -->*/
     display: flex;
     width: 100%;
     height: 325px;
+  }
+
+  #latest-posts a {
+    grid-area: view-more;
+    align-self: center;
+    justify-self: center;
+    margin: 10px;
   }
   /*<!--
 
