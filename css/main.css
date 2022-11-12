@@ -114,6 +114,27 @@ img#main-logo {
   background-color: var(--dark_blue);
   color: var(--orange);
 }
+
+.loader {
+  margin: 0 auto;
+  margin-top: 100px;
+  border: 10px solid var(--white);
+  border-top: 10px solid var(--orange);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /*<!--
 
 //HEADER//-->*/
@@ -277,13 +298,15 @@ main {
   margin: -15px;
 }
 
-.latestPosts div {
+.latestPosts .post {
   text-align: center;
   min-width: 100vw;
   height: calc(100vw * 1);
   scroll-snap-align: start;
   margin-bottom: 25px;
   align-self: flex-end;
+  background-repeat: no-repeat;
+  background-size: 50px;
 }
 
 .latestPosts {
@@ -545,7 +568,7 @@ Media Query above 500px width -->*/
     margin-bottom: 75px;
   }
 
-  .latestPosts div {
+  .latestPosts .post {
     border-radius: 25px;
     text-align: center;
     min-width: 540px;
