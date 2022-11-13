@@ -23,27 +23,17 @@ getResults();
 function latestPHTML(posts) {
   posts.forEach(function (post) {
     latestP.innerHTML += `
-    <div class="post" style="background: url(${post._embedded["wp:featuredmedia"]["0"].source_url});">
-        <p>
-            it works
-        </p>
-    </div>"`;
+      <div class="post" style="background-image: url(${post._embedded["wp:featuredmedia"][0].source_url})" alt="${post._embedded["wp:featuredmedia"][0].alt_text}">
+      <p>
+              it works
+          </p>
+      </div>`;
   });
 }
 
 //
 //
 //
-//
-///
-//
-//
-//
-///
-///
-//
-///
-///
 //
 //
 ///
