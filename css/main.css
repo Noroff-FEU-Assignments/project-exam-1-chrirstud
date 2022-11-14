@@ -272,12 +272,16 @@ main {
 #page-intro {
   margin-bottom: 25px;
 }
+/*<!--
+
+//Latest posts//-->*/
 
 #latest-posts {
   display: grid;
   grid-template-areas:
     "heading break-line view-more"
-    "posts posts posts";
+    "posts posts posts"
+    "text text text";
   grid-template-columns: auto 1fr;
   margin-bottom: 75px;
 }
@@ -290,12 +294,20 @@ main {
   margin-left: 15px;
 }
 
+#latest-posts a.view-more {
+  text-decoration: underline;
+}
+
+#latest-posts p {
+  grid-area: text;
+  padding-top: 25px;
+}
+
 #latest-posts a {
   height: fit-content;
   grid-area: posts;
   align-self: flex-end;
   justify-self: center;
-  margin: -15px;
 }
 
 .latestPosts .post {
@@ -351,25 +363,41 @@ button#slideRight {
   background: none;
   align-self: center;
   border: solid 0.5px var(--dark_blue);
-  box-shadow: 0px 0px 100px 25px var(--dark_blue);
+  box-shadow: 0px 0px 100px 5px var(--dark_blue);
+  background-color: rgba(34, 41, 49, 0.8);
+  border-radius: 100%;
+  margin: 15px;
 }
 
 button#slideLeft {
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 100px;
   justify-self: flex-start;
 }
 
 button#slideRight {
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
   justify-self: flex-end;
 }
 
 button#slideLeft:active,
-button#slideRight:active {
-  box-shadow: 0px 0px 100px 5px var(--light_blue);
-} /*<!--
+button#slideRight:active,
+button#slideLeft:hover,
+button#slideRight:hover {
+  box-shadow: 0px 0px 100px 25px var(--light_blue);
+}
+/*<!--
+
+//Post//-->*/
+
+#post-content {
+  display: block;
+  margin: 0 auto;
+}
+
+.featured-img {
+  max-width: 100%;
+  height: auto;
+  max-height: 1000px;
+}
+/*<!--
 
 //Contact//-->*/
 
@@ -632,7 +660,7 @@ Media Query above 500px width -->*/
   .latestPosts .post {
     border-radius: 25px;
     text-align: center;
-    min-width: 400px;
+    min-width: 540px;
     height: 270px;
     scroll-snap-align: start;
   }
@@ -645,11 +673,16 @@ Media Query above 500px width -->*/
     height: 325px;
   }
 
-  #latest-posts a {
+  #latest-posts a.view-more {
     grid-area: view-more;
     align-self: center;
     justify-self: center;
     margin: 10px;
+    text-decoration: none;
+  }
+
+  #latest-posts p {
+    padding-top: 0px;
   }
 
   #featured-posts {
