@@ -310,6 +310,17 @@ main {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border: solid 5px var(--dark_blue);
+  border-radius: 25px;
+}
+
+.latestPostTitle {
+  margin-bottom: 25px;
+  background-color: var(--dark_blue);
+  border-radius: 0 10px 10px 0;
 }
 
 .latestPosts {
@@ -358,19 +369,7 @@ button#slideRight {
 button#slideLeft:active,
 button#slideRight:active {
   box-shadow: 0px 0px 100px 5px var(--light_blue);
-}
-
-.post {
-  display: block;
-  overflow: hidden;
-  border: solid 5px var(--dark_blue);
-  border-radius: 25px;
-}
-
-.post p {
-  margin: 25%;
-}
-/*<!--
+} /*<!--
 
 //Contact//-->*/
 
@@ -633,7 +632,7 @@ Media Query above 500px width -->*/
   .latestPosts .post {
     border-radius: 25px;
     text-align: center;
-    min-width: 540px;
+    min-width: 400px;
     height: 270px;
     scroll-snap-align: start;
   }

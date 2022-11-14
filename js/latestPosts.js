@@ -24,10 +24,12 @@ function latestPHTML(posts) {
   posts.forEach(function (post) {
     latestP.innerHTML += `
       <div class="post" style="background-image: url(${post._embedded["wp:featuredmedia"][0].source_url})" alt="${post._embedded["wp:featuredmedia"][0].alt_text}">
-      <p>
-              it works
-          </p>
+        <div class="latestPostTitle">
+          <h3>${post.title.rendered}</h3>
+        </div>
       </div>`;
+
+    console.log(post.title.rendered);
   });
 }
 
