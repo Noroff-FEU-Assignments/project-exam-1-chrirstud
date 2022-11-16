@@ -389,13 +389,13 @@ button#slideRight:hover {
 
 #post-content {
   display: block;
-  margin: 0 auto;
 }
 
 .featured-img {
   max-width: 100%;
   height: auto;
-  max-height: 1000px;
+  max-height: 500px;
+  border-radius: 25px;
 }
 /*<!--
 
