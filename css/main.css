@@ -295,7 +295,9 @@ main {
 }
 
 #latest-posts a.view-more {
-  text-decoration: underline;
+  align-self: center;
+  grid-area: view-more;
+  margin: 5px;
 }
 
 #latest-posts p {
@@ -329,9 +331,9 @@ main {
   border-radius: 25px;
 }
 
-.latestPostTitle {
+.postTitle {
   margin-bottom: 25px;
-  background-color: var(--dark_blue);
+  background-color: rgba(34, 41, 49, 0.8);
   border-radius: 0 10px 10px 0;
 }
 
@@ -367,6 +369,7 @@ button#slideRight {
   background-color: rgba(34, 41, 49, 0.8);
   border-radius: 100%;
   margin: 15px;
+  z-index: 10;
 }
 
 button#slideLeft {
@@ -385,18 +388,90 @@ button#slideRight:hover {
 }
 /*<!--
 
+//blogList//-->*/
+
+#blogList {
+  display: block;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
+}
+
+.blogPost {
+  display: block;
+  min-height: 250px;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: 10px;
+  border-radius: 25px;
+}
+
+.blogPost .postTitle {
+  border-radius: 0px;
+  text-align: center;
+}
+
+/*<!--
+
 //Post//-->*/
 
 #post-content {
   display: block;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-.featured-img {
+.postDetails {
+  display: grid;
+  grid-template-areas:
+    "post-gallery"
+    "post-text";
+}
+
+.postText {
+  grid-area: post-text;
+  text-align: start;
+}
+
+.postGallery {
+  grid-area: post-gallery;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.postGallery figure {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.postGallery img {
   max-width: 100%;
   height: auto;
-  max-height: 500px;
+  border: solid 2.5px var(--dark_blue);
   border-radius: 25px;
 }
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--dark_blue);
+  background-color: rgba(34, 41, 49, 0.4);
+}
+
+.modal-content {
+  margin: auto;
+  text-align: center;
+}
+
 /*<!--
 
 //Contact//-->*/
@@ -410,7 +485,7 @@ form#contactForm {
   display: block;
 }
 
-input,
+#contact-info input,
 textarea {
   background-color: var(--grey);
   margin-bottom: 15px;
@@ -684,8 +759,28 @@ Media Query above 500px width -->*/
   #latest-posts p {
     padding-top: 0px;
   }
+  /*<!--
 
-  #featured-posts {
+  //blogList//-->*/
+
+  #blogList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  /*<!--
+  //Post//-->*/
+
+  #post-content {
+    text-align: start;
+  }
+
+  .postDetails {
+    display: grid;
+    grid-template-areas: "post-text" "post-gallery";
+  }
+
+  /*#featured-posts {
     display: grid;
     grid-template-areas:
       "heading break-line"
@@ -709,9 +804,9 @@ Media Query above 500px width -->*/
   .small-post {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-  }
+  } */
 
-  input,
+  #contact-info input,
   textarea {
     width: 75%;
   }

@@ -23,7 +23,7 @@ function latestPHTML(posts) {
   posts.forEach(function (post) {
     latestP.innerHTML += `<a href="/pages/post.html?id=${post.id}">
         <div class="post" style="background-image: url(${post._embedded["wp:featuredmedia"][0].source_url})" alt="${post._embedded["wp:featuredmedia"][0].alt_text}">
-          <div class="latestPostTitle">
+          <div class="postTitle">
             <h3>${post.title.rendered}</h3>
           </div>
         </div>
