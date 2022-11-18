@@ -9,22 +9,33 @@ async function getResults() {
     const result = await response.json();
     blogList.innerHTML = "";
 
-    listResult(result);
+    console.log(result);
+
+    for (let i = 0; i < result.length; i++) {
+      console.log(result[i]._embedded["wp:featuredmedia"][0].source_url);
+      console.log(result[i].title.rendered);
+      console.log(result[i].tags.length);
+
+      if (i === 5) {
+        break;
+      }
+
+      blogList.innerHTML += `
+      <a href="/pages/post.html?id=${result[i].id}">
+        <div 
+          class="blogPost"
+          style="background-image:
+            url(${result[i]._embedded["wp:featuredmedia"][0].source_url})" 
+          alt="${result[i]._embedded["wp:featuredmedia"][0].alt_text}">
+          <div class="postTitle">
+            <h3>${result[i].title.rendered}</h3>
+          </div>
+        </div>
+      </a>`;
+    }
   } catch (error) {
     console.log(error, "Error fetching API");
   }
 }
 
 getResults();
-
-function listResult(posts) {
-  posts.forEach(function (post) {
-    blogList.innerHTML += `<a href="/pages/post.html?id=${post.id}">
-        <div class="blogPost" style="background-image: url(${post._embedded["wp:featuredmedia"][0].source_url})" alt="${post._embedded["wp:featuredmedia"][0].alt_text}">
-          <div class="postTitle">
-            <h3>${post.title.rendered}</h3>
-          </div>
-        </div>
-      </a>`;
-  });
-}
