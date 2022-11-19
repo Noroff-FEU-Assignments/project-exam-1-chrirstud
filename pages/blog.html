@@ -119,9 +119,49 @@
             <!--REMEMBER TO CHANGE meta, title and current page-->
           </p>
         </section>
+        <div class="filter-cont">
+          <form class="filter-posts">
+            <input
+              type="radio"
+              id="radio-btn1"
+              name="filtered-posts"
+              value="All"
+              data-filter="all"
+              checked="checked"
+            />
+            <label for="all">All</label>
+            <input
+              type="radio"
+              id="radio-btn2"
+              name="filtered-posts"
+              value="Simple"
+              data-filter="simple"
+            />
+            <label for="simple">Simple </label>
+            <input
+              type="radio"
+              id="radio-btn3"
+              name="filtered-posts"
+              value="Medium"
+              data-filter="medium"
+            />
+            <label for="medium">Medium </label>
+            <input
+              type="radio"
+              id="radio-btn4"
+              name="filtered-posts"
+              value="Demanding"
+              data-filter="demanding"
+            />
+            <label for="demanding">Demanding </label>
+          </form>
+        </div>
         <section id="blogList">
           <div class="loader" style="margin-bottom: 1000px"></div>
         </section>
+        <div class="load-more">
+          <button id="cta-button" class="load-more-button">Load more</button>
+        </div>
       </div>
     </main>
     <!--

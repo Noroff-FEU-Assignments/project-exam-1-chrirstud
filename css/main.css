@@ -40,6 +40,7 @@ p,
 a,
 span {
   color: var(--white);
+  text-shadow: black 2px 2px 0px;
   text-decoration: none;
   padding: 0;
   margin: 0;
@@ -66,6 +67,30 @@ p,
 a,
 span {
   font-size: 14pt;
+}
+
+#cta-button {
+  all: unset;
+  background-color: var(--orange);
+  color: var(--dark_blue);
+  padding: 10px;
+  text-align: center;
+  width: 100px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid var(--orange);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#cta-button:hover {
+  background-color: var(--dark_blue);
+  color: var(--orange);
+  border: 1px solid var(--dark_blue);
+}
+
+#cta-button:active {
+  color: var(--white);
 }
 
 a:hover {
@@ -96,23 +121,6 @@ img#main-logo {
 .footer-wrapper {
   background-color: inherit;
   width: 100%;
-}
-
-#main-button {
-  width: fit-content;
-  height: fit-content;
-  background-color: var(--orange);
-  color: var(--dark_blue);
-  font-size: 15pt;
-  font-weight: bolder;
-  padding: 10px 25px;
-  border-radius: 5px;
-  border: solid 1px var(--orange);
-}
-
-#main-button:hover {
-  background-color: var(--dark_blue);
-  color: var(--orange);
 }
 
 .loader {
@@ -328,21 +336,23 @@ main {
   background-position: center;
   border: solid 10px var(--dark_blue);
   border-radius: 35px;
+  -webkit-transition: color 0.9s ease-in;
+  -moz-transition: color 0.9s ease-in;
+  -o-transition: color 0.9s ease-in;
+  transition: color 0.9s ease-in;
+  transition: 0.9s;
+}
+
+.latestPosts .post:hover {
+  border-radius: 10px;
+  text-decoration: underline;
+  color: var(--orange);
 }
 
 .postTitle {
+  text-align: center;
   margin-bottom: 25px;
   background-color: rgba(34, 41, 49, 0.8);
-  -webkit-transition: background-color 0.1s ease-in-out;
-  -moz-transition: background-color 0.1s ease-in-out;
-  -o-transition: background-color 0.1s ease-in-out;
-  transition: background-color 0.1s ease-in-out;
-
-  /*<!--//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! HEEEEERRR!!!!!!!!!//-->*/
-}
-
-.postTitle:hover {
-  background-color: #fca400;
 }
 
 button#slideLeft,
@@ -352,6 +362,23 @@ button#slideRight {
 /*<!--
 
 //blogList//-->*/
+
+.filter-posts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: start;
+  color: var(--white);
+  margin: 25px;
+  max-width: 100%;
+}
+
+.filter-posts input {
+  margin-right: 5px;
+}
+
+.filter-posts input[type="radio"]:checked + label {
+  color: var(--light_blue);
+}
 
 #blogList {
   display: block;
@@ -368,12 +395,49 @@ button#slideRight {
   -o-background-size: cover;
   background-size: cover;
   margin: 10px;
-  border-radius: 25px;
+  border-radius: 35px;
+  -webkit-transition: color 0.9s ease-in;
+  -moz-transition: color 0.9s ease-in;
+  -o-transition: color 0.9s ease-in;
+  transition: color 0.9s ease-in;
+  transition: 0.9s;
+}
+
+.blogPost:hover {
+  border-radius: 5px;
+  text-decoration: underline;
+  color: var(--orange);
 }
 
 .blogPost .postTitle {
   border-radius: 0px;
   text-align: center;
+}
+
+#blogList a {
+  display: none;
+}
+
+/* Add more #blogList a:nth-child(x) if more are to be loaded as default, and change "const currentAmount = x*/
+#blogList a:nth-child(1),
+#blogList a:nth-child(2),
+#blogList a:nth-child(3),
+#blogList a:nth-child(4),
+#blogList a:nth-child(5),
+#blogList a:nth-child(6) {
+  display: block;
+}
+
+.load-more {
+  max-width: 100%;
+  display: flex;
+  margin: 25px;
+  justify-content: center;
+}
+
+.load-more-button {
+  display: block;
+  margin: 15px;
 }
 
 /*<!--
@@ -475,7 +539,7 @@ form#contactForm {
 
 #contact-info input,
 textarea {
-  background-color: var(--grey);
+  background-color: var(--white);
   margin-bottom: 15px;
   padding: 10px;
   color: var(--dark_blue);
@@ -484,36 +548,12 @@ textarea {
   font-weight: bold;
   border-top: none;
   border-right: none;
-  border-bottom: 1px solid var(--grey);
   border-radius: 5px;
   width: 100%;
 }
 
 textarea {
   min-height: 100px;
-}
-
-button.contact-form-button {
-  all: unset;
-  background-color: var(--orange);
-  color: var(--dark_blue);
-  padding: 10px;
-  text-align: center;
-  width: 100px;
-  font-weight: bold;
-  border-radius: 5px;
-  border: 1px solid var(--orange);
-}
-
-button.contact-form-button:hover {
-  background-color: var(--dark_blue);
-  color: var(--orange);
-  border: 1px solid var(--dark_blue);
-  border-radius: 5px 100px 100px 5px;
-}
-
-button.contact-form-button:active {
-  color: var(--white);
 }
 
 .form-error {
@@ -720,6 +760,17 @@ Media Query above 600px width -->*/
   /*<!--
   //blogList//-->*/
 
+  .filter-posts {
+    display: flex;
+    justify-content: start;
+    margin: 0;
+    margin-left: 45px;
+  }
+
+  .filter-posts label {
+    margin-right: 25px;
+  }
+
   #blogList {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -784,12 +835,13 @@ Media Query above 11000px width -->*/
     border: none;
     background: none;
     align-self: center;
-    border: solid 0.5px var(--dark_blue);
     box-shadow: 0px 0px 100px 5px var(--dark_blue);
     background-color: rgba(34, 41, 49, 0.8);
     border-radius: 100%;
     margin: 15px;
     z-index: 10;
+    transition: 1s ease;
+    cursor: pointer;
   }
 
   button#slideLeft {
@@ -804,7 +856,9 @@ Media Query above 11000px width -->*/
   button#slideRight:active,
   button#slideLeft:hover,
   button#slideRight:hover {
-    box-shadow: 0px 0px 100px 25px var(--light_blue);
+    background-color: var(--orange);
+    border: solid 0.5 var(--orange);
+    color: #222931;
   }
 
   .latestPosts {
