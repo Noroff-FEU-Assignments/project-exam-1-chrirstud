@@ -10,15 +10,15 @@ const loadMoreButton = document.querySelector(".load-more-button");
 
 function loadMore() {
   //Load more
-  let currentAm = 6;
+  let currentAm = 10;
 
   loadMoreButton.onclick = function () {
     let posts = document.querySelectorAll("#blogList a");
 
-    for (let i = currentAm; i < currentAm + 3; i++) {
+    for (let i = currentAm; i < currentAm + 9; i++) {
       posts[i].style.display = "block";
     }
-    currentAm += 6;
+    currentAm += 10;
     if (currentAm >= posts.length) {
       loadMoreButton.style.display = "none";
     }

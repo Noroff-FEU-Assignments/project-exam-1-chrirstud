@@ -424,7 +424,11 @@ button#slideRight {
 #blogList a:nth-child(3),
 #blogList a:nth-child(4),
 #blogList a:nth-child(5),
-#blogList a:nth-child(6) {
+#blogList a:nth-child(6),
+#blogList a:nth-child(7),
+#blogList a:nth-child(8),
+#blogList a:nth-child(9),
+#blogList a:nth-child(10) {
   display: block;
 }
 
