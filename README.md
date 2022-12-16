@@ -1,6 +1,6 @@
 # Odd Tops - Project Exam 1
 
-![image](/images/odd-tops_homepage.jpg)
+![image](/img/odd-tops_homepage.jpg)
 
 A blog based on mountain hikes carried out by a friend.
 
